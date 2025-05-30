@@ -102,26 +102,24 @@ const Destinations: React.FC = () => {
   return (
     <section id="destinations" className="py-20 bg-gray-50">
       <div className="container mx-auto px-8 sm:px-12 md:px-16 lg:px-20">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {language === 'PT' ? 'Descubra as Joias Escondidas de Angola' :
-               language === 'ES' ? 'Descubre las Joyas Escondidas de Angola' :
-               'Discover Angola\'s Hidden Gems'}
-            </h2>
-            <p className="text-gray-600 max-w-2xl">
-              {language === 'PT' ? 'Das quedas de água de tirar o fôlego às praias intocadas e vistas montanhosas deslumbrantes, Angola oferece experiências inesquecíveis para cada viajante.' :
-               language === 'ES' ? 'Desde cascadas impresionantes hasta playas vírgenes y vistas montañosas espectaculares, Angola ofrece experiencias inolvidables para cada viajero.' :
-               'From breathtaking waterfalls to pristine beaches and stunning mountain vistas, Angola offers unforgettable experiences for every traveler.'}
-            </p>
-          </div>
-          <div className="mt-6 md:mt-0 flex space-x-4">
+        <div className="flex flex-col items-center text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 max-w-2xl mx-auto">
+            {language === 'PT' ? 'Descubra as Joias Escondidas de Angola' :
+             language === 'ES' ? 'Descubre las Joyas Escondidas de Angola' :
+             'Discover Angola\'s Hidden Gems'}
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            {language === 'PT' ? 'Das quedas de água de tirar o fôlego às praias intocadas e vistas montanhosas deslumbrantes, Angola oferece experiências inesquecíveis para cada viajante.' :
+             language === 'ES' ? 'Desde cascadas impresionantes hasta playas vírgenes y vistas montañosas espectaculares, Angola ofrece experiencias inolvidables para cada viajero.' :
+             'From breathtaking waterfalls to pristine beaches and stunning mountain vistas, Angola offers unforgettable experiences for every traveler.'}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <button 
               onClick={() => setFilter('popular')}
-              className={`px-6 py-2 rounded-full ${
+              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 filter === 'popular' 
-                  ? 'bg-yellow-500 text-white' 
-                  : 'bg-white text-gray-700 border border-gray-300'
+                  ? 'bg-yellow-500 text-white shadow-md hover:bg-yellow-600' 
+                  : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
               }`}
             >
               {language === 'PT' ? 'Populares' :
@@ -130,10 +128,10 @@ const Destinations: React.FC = () => {
             </button>
             <button 
               onClick={() => setFilter('all')}
-              className={`px-6 py-2 rounded-full ${
+              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 filter === 'all' 
-                  ? 'bg-yellow-500 text-white' 
-                  : 'bg-white text-gray-700 border border-gray-300'
+                  ? 'bg-yellow-500 text-white shadow-md hover:bg-yellow-600' 
+                  : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
               }`}
             >
               {language === 'PT' ? 'Todos os Destinos' :
