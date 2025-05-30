@@ -45,43 +45,45 @@ const Navbar: React.FC = () => {
         isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
-      <div className="container mx-auto px-8 sm:px-12 md:px-16 lg:px-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center">
           <Logo />
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8 items-center">
-          <NavLink href="#" label={getTranslation(language, 'home')} isScrolled={isScrolled} />
-          <NavLink href="#destinations" label={getTranslation(language, 'destinations')} isScrolled={isScrolled} />
-          <NavLink href="#packages" label={getTranslation(language, 'packages')} isScrolled={isScrolled} />
-          <NavLink href="#about" label={getTranslation(language, 'aboutUs')} isScrolled={isScrolled} />
-          <NavLink href="#contact" label={getTranslation(language, 'contact')} isScrolled={isScrolled} />
+        <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="flex items-center space-x-4 xl:space-x-6">
+            <NavLink href="#" label={getTranslation(language, 'home')} isScrolled={isScrolled} />
+            <NavLink href="#destinations" label={getTranslation(language, 'destinations')} isScrolled={isScrolled} />
+            <NavLink href="#packages" label={getTranslation(language, 'packages')} isScrolled={isScrolled} />
+            <NavLink href="#about" label={getTranslation(language, 'aboutUs')} isScrolled={isScrolled} />
+            <NavLink href="#contact" label={getTranslation(language, 'contact')} isScrolled={isScrolled} />
+          </div>
           
           {/* Language and Currency Selector */}
-          <div className="relative">
+          <div className="relative ml-4">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`flex items-center space-x-3 px-4 py-2 rounded-full transition-all duration-300 ${
+              className={`flex items-center space-x-2 px-3 py-2 rounded-full transition-all duration-300 ${
                 isScrolled
                   ? 'bg-yellow-50 hover:bg-yellow-100'
                   : 'bg-white/20 hover:bg-white/30'
               }`}
             >
               <div className="flex items-center">
-                <Globe size={18} className={isScrolled ? 'text-yellow-600' : 'text-white'} />
-                <span className={`ml-1 font-medium ${isScrolled ? 'text-yellow-600' : 'text-white'}`}>
+                <Globe size={16} className={isScrolled ? 'text-yellow-600' : 'text-white'} />
+                <span className={`ml-1 font-medium text-sm ${isScrolled ? 'text-yellow-600' : 'text-white'}`}>
                   {language}
                 </span>
               </div>
               <div className="h-4 w-px bg-current opacity-20"></div>
               <div className="flex items-center">
-                <Coins size={18} className={isScrolled ? 'text-yellow-600' : 'text-white'} />
-                <span className={`ml-1 font-medium ${isScrolled ? 'text-yellow-600' : 'text-white'}`}>
+                <Coins size={16} className={isScrolled ? 'text-yellow-600' : 'text-white'} />
+                <span className={`ml-1 font-medium text-sm ${isScrolled ? 'text-yellow-600' : 'text-white'}`}>
                   {currency}
                 </span>
               </div>
-              <ChevronDown size={14} className={isScrolled ? 'text-yellow-600' : 'text-white'} />
+              <ChevronDown size={12} className={isScrolled ? 'text-yellow-600' : 'text-white'} />
             </button>
 
             {/* Dropdown Menu */}
@@ -130,10 +132,10 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile/Tablet Menu Button */}
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          className="md:hidden"
+          className="lg:hidden"
         >
           {isMenuOpen ? (
             <X className={isScrolled ? 'text-yellow-900' : 'text-white'} size={24} />
@@ -143,18 +145,18 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile/Tablet Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-4">
-          <div className="flex flex-col space-y-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-4 sm:px-6">
+          <div className="flex flex-col space-y-3">
             <MobileNavLink href="#" label={getTranslation(language, 'home')} />
             <MobileNavLink href="#destinations" label={getTranslation(language, 'destinations')} />
             <MobileNavLink href="#packages" label={getTranslation(language, 'packages')} />
             <MobileNavLink href="#about" label={getTranslation(language, 'aboutUs')} />
             <MobileNavLink href="#contact" label={getTranslation(language, 'contact')} />
             
-            {/* Mobile Language and Currency Selector */}
-            <div className="pt-4 border-t border-gray-100">
+            {/* Mobile/Tablet Language and Currency Selector */}
+            <div className="pt-4 mt-2 border-t border-gray-100">
               <div className="space-y-4">
                 <div>
                   <p className="text-sm font-medium text-gray-500 mb-2">Idioma</p>
@@ -211,7 +213,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, isScrolled }) => {
   return (
     <a 
       href={href} 
-      className={`font-medium relative hover:opacity-100 transition-all duration-300 ${
+      className={`text-sm font-medium relative hover:opacity-100 transition-all duration-300 ${
         isScrolled ? 'text-gray-800 hover:text-yellow-600' : 'text-white hover:text-white'
       } after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300`}
     >
@@ -227,7 +229,7 @@ interface MobileNavLinkProps {
 
 const MobileNavLink: React.FC<MobileNavLinkProps> = ({ href, label }) => {
   return (
-    <a href={href} className="text-gray-800 font-medium py-1 hover:text-yellow-600">
+    <a href={href} className="text-gray-800 font-medium py-1.5 hover:text-yellow-600 text-sm">
       {label}
     </a>
   );
