@@ -187,7 +187,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
   const { formatPrice } = useCurrency();
   
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full">
       <div className="relative h-64 overflow-hidden">
         <img 
           src={destination.image} 
@@ -200,7 +200,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
           <span className="font-medium">{destination.rating}</span>
         </div>
       </div>
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-gray-900">{destination.name}</h3>
           <div className="text-yellow-500 font-bold">
@@ -213,8 +213,8 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
           </div>
         </div>
         <p className="text-gray-600 text-sm mb-3">{destination.location}</p>
-        <p className="text-gray-700 mb-5">{destination.description[language]}</p>
-        <button className="w-full py-3 bg-yellow-500 text-white rounded-lg font-medium hover:bg-yellow-600 transition-colors duration-300">
+        <p className="text-gray-700 mb-5 flex-grow">{destination.description[language]}</p>
+        <button className="w-full py-3 bg-yellow-500 text-white rounded-lg font-medium hover:bg-yellow-600 transition-colors duration-300 mt-auto">
           {language === 'PT' ? 'Explorar Agora' :
            language === 'ES' ? 'Explorar Ahora' :
            'Explore Now'}
