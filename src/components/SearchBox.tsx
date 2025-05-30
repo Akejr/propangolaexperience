@@ -86,10 +86,11 @@ const SearchBox: React.FC = () => {
             <input
               type="date"
               id="date"
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-white/80 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-800 text-sm sm:text-base"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-white/80 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-800 text-sm sm:text-base appearance-none [&::-webkit-calendar-picker-indicator]:bg-transparent [&::-webkit-calendar-picker-indicator]:hover:cursor-pointer [&::-webkit-datetime-edit]:text-gray-500 [&::-webkit-datetime-edit-fields-wrapper]:p-0 [&::-webkit-datetime-edit-text]:p-0 [&::-webkit-datetime-edit-month-field]:p-0 [&::-webkit-datetime-edit-day-field]:p-0 [&::-webkit-datetime-edit-year-field]:p-0"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
               min={new Date().toISOString().split('T')[0]}
+              placeholder={language === 'EN' ? 'Select date' : language === 'PT' ? 'Selecione a data' : 'Seleccione la fecha'}
             />
           </div>
         </div>

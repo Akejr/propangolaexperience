@@ -14,7 +14,7 @@ const destinations = [
       EN: 'One of Africa\'s largest waterfalls, a breathtaking natural wonder.',
       ES: 'Una de las cascadas más grandes de África, una maravilla natural impresionante.'
     },
-    image: '/src/images/Quedas.jpg',
+    image: '/images/Quedas.jpg',
     rating: 4.8,
     price: 299,
     popular: true
@@ -28,7 +28,7 @@ const destinations = [
       EN: 'A beautiful peninsula with beaches, restaurants and cultural sites.',
       ES: 'Una hermosa península con playas, restaurantes y sitios culturales.'
     },
-    image: '/src/images/ilha de luanda.jpg',
+    image: '/images/ilha de luanda.jpg',
     rating: 4.6,
     price: 199,
     popular: true
@@ -42,7 +42,7 @@ const destinations = [
       EN: 'Famous mountain pass with spectacular views and hairpin turns.',
       ES: 'Famoso paso de montaña con vistas espectaculares y curvas cerradas.'
     },
-    image: '/src/images/serra da leba.jpg',
+    image: '/images/serra da leba.jpg',
     rating: 4.9,
     price: 349,
     popular: true
@@ -84,7 +84,7 @@ const destinations = [
       EN: 'Explore the wildlife and stunning landscapes of the Benguela region on an exciting safari.',
       ES: 'Explora la vida silvestre y los impresionantes paisajes de la región de Benguela en un emocionante safari.'
     },
-    image: '/src/images/safari benguela.jpg',
+    image: '/images/safari benguela.jpg',
     rating: 4.4,
     price: 229,
     popular: true

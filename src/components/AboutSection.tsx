@@ -80,14 +80,14 @@ const AboutSection: React.FC = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <img 
-                src="/src/images/about1.webp" 
+                src="/images/about1.webp" 
                 alt={language === 'PT' ? 'Paisagem de Angola' :
                      language === 'ES' ? 'Paisaje de Angola' :
                      'Angola landscape'} 
                 className="rounded-lg h-64 w-full object-cover"
               />
               <img 
-                src="/src/images/about2.jpg" 
+                src="/images/about2.jpg" 
                 alt={language === 'PT' ? 'Cultura local' :
                      language === 'ES' ? 'Cultura local' :
                      'Local culture'} 
@@ -96,14 +96,14 @@ const AboutSection: React.FC = () => {
             </div>
             <div className="space-y-4">
               <img 
-                src="/src/images/about3.jpeg" 
+                src="/images/about3.jpeg" 
                 alt={language === 'PT' ? 'Vida selvagem' :
                      language === 'ES' ? 'Vida silvestre' :
                      'Wildlife'} 
                 className="rounded-lg h-40 w-full object-cover"
               />
               <img 
-                src="/src/images/about4.jpg" 
+                src="/images/about4.jpg" 
                 alt={language === 'PT' ? 'Experiência de viagem' :
                      language === 'ES' ? 'Experiencia de viaje' :
                      'Travel experience'} 

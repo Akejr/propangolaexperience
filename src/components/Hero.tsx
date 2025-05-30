@@ -2,7 +2,6 @@ import React from 'react';
 import SearchBox from './SearchBox';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getTranslation } from '../translations';
-import backgroundImage from '../images/background.png';
 
 const Hero: React.FC = () => {
   const { language } = useLanguage();
@@ -11,7 +10,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>
       <img
-        src={backgroundImage}
+        src="/images/background.png"
         alt="Beautiful Angolan landscape"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
