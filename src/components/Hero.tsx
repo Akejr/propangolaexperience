@@ -8,15 +8,22 @@ const Hero: React.FC = () => {
   return (
     <div className="relative min-h-[120vh] sm:min-h-screen w-full">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
-      <img
-        src="/images/background.png"
-        alt="Beautiful Angolan landscape"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      />
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0">
+        <img
+          src="/images/backgroundmobile.jpg"
+          alt="Beautiful Angolan landscape"
+          className="block sm:hidden h-full w-full object-cover"
+        />
+        <img
+          src="/images/background.png"
+          alt="Beautiful Angolan landscape"
+          className="hidden sm:block h-full w-full object-cover"
+        />
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-[120vh] sm:min-h-screen flex items-start sm:items-center container mx-auto px-8 sm:px-12 md:px-16 lg:px-20 pt-36 md:pt-20">
+      <div className="relative z-20 min-h-[120vh] sm:min-h-screen flex items-start sm:items-center container mx-auto px-8 sm:px-12 md:px-16 lg:px-20 pt-36 md:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start w-full">
           <div className="max-w-xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 animate-fade-in">
